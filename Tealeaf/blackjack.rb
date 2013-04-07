@@ -1,3 +1,6 @@
+#Blackjack.rb
+#Bradley Li
+
 
 dtotal = 0
 ptotal = 0
