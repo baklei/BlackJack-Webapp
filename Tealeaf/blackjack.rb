@@ -44,10 +44,10 @@ while done == false
     end
   end
   deck.shuffle!
-    player << deck.shift
-    dealer << deck.shift
-    player << deck.shift
-    dealer << deck.shift
+  player << deck.shift
+  dealer << deck.shift
+  player << deck.shift
+  dealer << deck.shift
     
   #Player's Turn  
   while 1
@@ -55,68 +55,68 @@ while done == false
     
     puts "dealer's faceup card is a #{dealer[1]}"
     puts "#{name}'sg hand is #{player}, 1) hit or 2) stay"
-   co = gets.chomp
+    co = gets.chomp
     
-   #If player gets 21 on first hand
-  if calculateTotal(player) == 21
-     puts "Blackjack You win"
-     break
-  end
-  #If dealer gets 21 on first hand
-  if calculateTotal(dealer) == 21
-    puts "Blackjack Dealer wins"
-    break
-  end
-   
-  #If the player hits
-   if co == '1'
-     player << deck.shift
-     
-     if calculateTotal(player) > 21
-     puts "You have Busted Dealer Wins"
-     break
-    end
-    
+    #If player gets 21 on first hand
     if calculateTotal(player) == 21
       puts "Blackjack You win"
-     break
-  end
-    next
-   end
+      break
+    end
+    #If dealer gets 21 on first hand
+    if calculateTotal(dealer) == 21
+      puts "Blackjack Dealer wins"
+      break
+    end
    
-   #If player stays
-   if co == '2'
-     #Dealer's Turn
-     while 1
-       puts "dealer's hand is #{dealer}"
-       
-       if calculateTotal(dealer) > 21
-	 puts "Dealer has Busted"
-	 busted = true
-	 break
+    #If the player hits
+    if co == '1'
+      player << deck.shift
+     
+      if calculateTotal(player) > 21
+        puts "You have Busted Dealer Wins"
+        break
+      end
     
-       elsif calculateTotal(dealer) == 21
-	 puts "Blackjack Dealer wins"
-	 break
-       end
+      if calculateTotal(player) == 21
+        puts "Blackjack You win"
+        break
+      end
+      next
+    end
+   
+    #If player stays
+    if co == '2'
+      #Dealer's Turn
+      while 1
+	puts "dealer's hand is #{dealer}"
        
-       if calculateTotal(dealer) < 17
-	 puts "Dealer hits"
-	 dealer << deck.shift
-       else
-	 puts "Dealer stands"
-	 break
-       end
-     end
-     if calculateTotal(player) > calculateTotal(dealer) || busted == true
-       puts "You win"
-     else
-       puts "You Lose"
-     end
-     break
-   end
+	if calculateTotal(dealer) > 21
+	  puts "Dealer has Busted"
+	  busted = true
+	  break
+    
+        elsif calculateTotal(dealer) == 21
+	  puts "Blackjack Dealer wins"
+	  break
+        end
+       
+	if calculateTotal(dealer) < 17
+	  puts "Dealer hits"
+	  dealer << deck.shift
+	else
+	  puts "Dealer stands"
+	  break
+        end
+      end
+      if calculateTotal(player) > calculateTotal(dealer) || busted == true
+        puts "You win"
+      else
+        puts "You Lose"
+      end
+      break
+    end
+  end
   
-end
   puts "Play again? 1) yes or 2) no"
   
   again = gets.chomp
