@@ -54,7 +54,7 @@ while done == false
     co = '0' #variable to determine hit or stay
     
     puts "dealer's faceup card is a #{dealer[1]}"
-    puts "#{name}'s hand is #{player}, 1) hit or 2) stay"
+    puts "#{name}'sg hand is #{player}, 1) hit or 2) stay"
    co = gets.chomp
     
    #If player gets 21 on first hand
