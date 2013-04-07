@@ -108,6 +108,8 @@ while done == false
 	  break
         end
       end
+      puts "#{name} Total is #{calculateTotal(player)}"
+      puts "Dealer's Total is #{calculateTotal(dealer)}"
       if calculateTotal(player) > calculateTotal(dealer) || busted == true
         puts "You win"
       else
