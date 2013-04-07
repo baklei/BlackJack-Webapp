@@ -2,9 +2,6 @@
 #Bradley Li
 
 
-dtotal = 0
-ptotal = 0
-
 busted = false
 done = false
 player = []
@@ -128,8 +125,6 @@ while done == false
     player.clear
     dealer.clear
     deck.clear
-    ptotal = 0
-    dtotal = 0
     busted = false
     next
   end
