@@ -84,7 +84,9 @@ while done == false
     next
    end
    
+   #If player stays
    if co == '2'
+     #Dealer's Turn
      while 1
        puts "dealer's hand is #{dealer}"
        
