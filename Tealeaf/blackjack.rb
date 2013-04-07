@@ -15,22 +15,22 @@ deck = []
 
 def calculateTotal(hand)
   total = 0
-      for i in 0..hand.size
-       if hand[i] == 'K' || hand[i] == 'J' || hand[i] == 'Q'
-	total += 10
-	next
-       end
-       if hand[i] == 'A'
-	 if (total + 11) <= 21
-	   total += 11
-	  else
-	    total += 1
-	  end
-       else
-	 total += hand[i].to_i
-   end
+  for i in 0..hand.size
+    if hand[i] == 'K' || hand[i] == 'J' || hand[i] == 'Q'
+      total += 10
+      next
     end
-    return total
+    if hand[i] == 'A'
+      if (total + 11) <= 21
+	total += 11
+      else
+	total += 1
+      end
+    else
+      total += hand[i].to_i
+    end
+  end
+  return total
 end
   
   
